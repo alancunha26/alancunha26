@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "foam.foam-vscode",
+    "ban.spellright",
+    "yzhang.markdown-all-in-one"
+  ],
+  "unwantedRecommendations": []
+}

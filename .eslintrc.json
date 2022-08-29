@@ -1,0 +1,44 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": ["plugin:@typescript-eslint/recommended", "plugin:astro/recommended", "prettier"],
+  "plugins": ["@typescript-eslint", "prettier", "import", "astro"],
+  "rules": {
+    "@typescript-eslint/no-var-requires": "off",
+    "prettier/prettier":  ["error"],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": false
+        },
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.astro"],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".astro"],
+        "ecmaFeatures": {
+          "jsx": false
+        }
+      },
+      "rules": {
+        // "astro/no-conflict-set-directives": "error",
+        // "astro/no-unused-define-vars-in-style": "error"
+      }
+    }
+  ]
+}
